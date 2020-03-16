@@ -4,7 +4,7 @@
 
 Write a program in C++ using STL that allows the user to control multiple worker threads
 
-###Requirements
+### Requirements
 Implement at least two distinct workers (e.g. computing some math function for a long time, writing and reading large files, etc.).
 A worker thread must be safely paused, restarted, stopped or destroyed.
 The program should accept the following arguments:
