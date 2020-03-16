@@ -23,8 +23,8 @@ The clarity and the extensibility of the solution is greatly appreciated.
 ## Exercise 2 [CUDA / Optimization]
 
 We would like to optimize some CPU code which, given the last layer of a Deep Learning network, checks if each element validates some threshold and produces a DetectedObject element.
-The output_ptr is a pointer to an image of size width x height, that can be assumed to be in GPU. 
-We do not want you to write code, just to give an idea of how you would optimize this code.
+The **output_ptr** is a pointer to an image of size **width** x **height** that can be assumed to be in GPU. 
+We would like you to give an idea of how you would optimize this code. Writing code is optional. 
 
 
 ```
