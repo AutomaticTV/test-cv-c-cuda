@@ -2,20 +2,20 @@
 
 ## Exercise 1 [Multithreading C++]
 
-Write a program in C++ using STL that allows the user to control multiple worker threads
+Write a program in C++ using STL that allows the user to control multiple worker threads.
 
 ### Requirements
 Implement at least two distinct workers (e.g. computing some math function for a long time, writing and reading large files, etc.).
 A worker thread must be safely paused, restarted, stopped or destroyed.
 The program should accept the following arguments:
-./program --help prints help message and instructions
-./program --threads <nb_threads_to_run> starts <nb_threads_to_run> threads and wait for instructions. Each thread should have an id in the range [1, <nb_threads_to_run>]
+**./program --help** prints help message and instructions
+**./program --threads <nb_threads_to_run>** starts **<nb_threads_to_run>** threads and wait for instructions. Each thread should have an id in the range [1, **<nb_threads_to_run>**]
 
 Once the threads are started, the program should read instructions from the standard input. These instructions should have the following format:
-pause <thread_id> pauses the thread with the given id and print a confirmation message
-restart <thread_id> restarts the thread with the given id (if paused) and print a confirmation message
-stop <thread_id> stops the thread with the given id (if not stopped) and print a confirmation message
-status prints the id, the status (paused, running, stopped, finished) and the current processing step for each thread
+**pause _<thread_id>_** pauses the thread with the given id and print a confirmation message
+**restart _<thread_id>_** restarts the thread with the given id (if paused) and print a confirmation message
+**stop _<thread_id>_** stops the thread with the given id (if not stopped) and print a confirmation message
+**status** prints the id, the status (paused, running, stopped, finished) and the current processing step for each thread
 
 The program should exit gracefully when all the worker threads are finished. Invalid program  options and instructions should be signaled.
 The clarity and the extensibility of the solution is greatly appreciated.
@@ -26,8 +26,9 @@ We would like to optimize some CPU code which, given the last layer of a Deep Le
 The output_ptr is a pointer to an image of size width x height, that can be assumed to be in GPU. 
 We do not want you to write code, just to give an idea of how you would optimize this code.
 
-std::vector<DetectedObject> postProcess(float *output_ptr, int width, int height, int batchSize, std::vector<std::vector<int>> anchors, int classes, std::vector<float> classThresh, int inputWidth, int inputHeight) {
 
+```
+std::vector<DetectedObject> postProcess(float *output_ptr, int width, int height, int batchSize, std::vector<std::vector<int>> anchors, int classes, std::vector<float> classThresh, int inputWidth, int inputHeight) {
     std::vector<DetectedObject> detections;
     assert(classThresh.size() == classes);
     int num_anchors = anchors.size();
@@ -93,4 +94,4 @@ inline float sigmoid(float in) {
 inline float exponential(float in) {
     return exp(in);
 }
-
+```
